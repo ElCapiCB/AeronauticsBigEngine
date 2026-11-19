@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:power_output",
+  "properties": {
+    "sable:mass": 4.0
+  }
+}

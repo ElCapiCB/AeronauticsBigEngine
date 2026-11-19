@@ -1,0 +1,53 @@
+{
+  "values": [
+    "minecraft:lava",
+    {
+      "id": "#c:fuels",
+      "required": false
+    },
+    {
+      "id": "#c:fuels/diesel",
+      "required": false
+    },
+    {
+      "id": "#c:fuels/gasoline",
+      "required": false
+    },
+    {
+      "id": "#c:fuels/biodiesel",
+      "required": false
+    },
+    {
+      "id": "#c:fuels/ethanol",
+      "required": false
+    },
+    {
+      "id": "#c:fuels/kerosene",
+      "required": false
+    },
+    {
+      "id": "#c:diesel",
+      "required": false
+    },
+    {
+      "id": "#c:gasoline",
+      "required": false
+    },
+    {
+      "id": "#c:biodiesel",
+      "required": false
+    },
+    {
+      "id": "#c:ethanol",
+      "required": false
+    },
+    {
+      "id": "#c:fuel",
+      "required": false
+    },
+    {
+      "id": "#c:kerosene",
+      "required": false
+    }
+  ]
+}

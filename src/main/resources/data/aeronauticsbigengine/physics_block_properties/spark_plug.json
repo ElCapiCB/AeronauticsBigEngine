@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:spark_plug",
+  "properties": {
+    "sable:mass": 0.1
+  }
+}

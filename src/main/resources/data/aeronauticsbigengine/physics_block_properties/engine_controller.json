@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:engine_controller",
+  "properties": {
+    "sable:mass": 1.0
+  }
+}

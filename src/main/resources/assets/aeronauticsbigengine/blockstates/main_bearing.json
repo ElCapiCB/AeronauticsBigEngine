@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "aeronauticsbigengine:block/main_bearing",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "aeronauticsbigengine:block/main_bearing"
+    },
+    "axis=z": {
+      "model": "aeronauticsbigengine:block/main_bearing",
+      "x": 90
+    }
+  }
+}

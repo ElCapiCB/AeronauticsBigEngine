@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:crankshaft",
+  "properties": {
+    "sable:mass": 2.0
+  }
+}

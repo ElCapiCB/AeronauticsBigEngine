@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "aeronauticsbigengine:block/engine_piston"
+    },
+    "facing=down": {
+      "model": "aeronauticsbigengine:block/engine_piston",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "aeronauticsbigengine:block/engine_piston",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "aeronauticsbigengine:block/engine_piston",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "aeronauticsbigengine:block/engine_piston",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east": {
+      "model": "aeronauticsbigengine:block/engine_piston",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

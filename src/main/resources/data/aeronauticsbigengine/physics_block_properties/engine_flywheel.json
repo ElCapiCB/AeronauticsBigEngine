@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:engine_flywheel",
+  "properties": {
+    "sable:mass": 16.0
+  }
+}

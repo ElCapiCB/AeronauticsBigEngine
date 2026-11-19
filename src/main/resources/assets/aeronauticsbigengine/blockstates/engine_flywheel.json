@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "aeronauticsbigengine:block/engine_flywheel",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "aeronauticsbigengine:block/engine_flywheel"
+    },
+    "axis=z": {
+      "model": "aeronauticsbigengine:block/engine_flywheel",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "create:block/weathered_iron_block"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        12,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/weathered_iron_block"
+        },
+        "south": {
+          "texture": "create:block/weathered_iron_block"
+        },
+        "east": {
+          "texture": "create:block/weathered_iron_block"
+        },
+        "west": {
+          "texture": "create:block/weathered_iron_block"
+        },
+        "up": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "down": {
+          "texture": "create:block/dark_metal_block"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        12,
+        2
+      ],
+      "to": [
+        14,
+        16,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "south": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "east": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "west": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "up": {
+          "texture": "create:block/weathered_iron_block"
+        },
+        "down": {
+          "texture": "create:block/weathered_iron_block"
+        }
+      }
+    }
+  ]
+}

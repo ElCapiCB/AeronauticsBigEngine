@@ -1,0 +1,40 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "create:block/andesite_casing"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/andesite_casing"
+        },
+        "south": {
+          "texture": "create:block/andesite_casing"
+        },
+        "east": {
+          "texture": "create:block/andesite_casing"
+        },
+        "west": {
+          "texture": "create:block/andesite_casing"
+        },
+        "up": {
+          "texture": "create:block/gearbox"
+        },
+        "down": {
+          "texture": "create:block/gearbox"
+        }
+      }
+    }
+  ]
+}

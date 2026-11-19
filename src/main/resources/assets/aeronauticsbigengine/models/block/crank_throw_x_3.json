@@ -1,0 +1,168 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "create:block/dark_metal_block"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        6,
+        6
+      ],
+      "to": [
+        3,
+        10,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/axis"
+        },
+        "south": {
+          "texture": "create:block/axis"
+        },
+        "east": {
+          "texture": "create:block/axis_top"
+        },
+        "west": {
+          "texture": "create:block/axis_top"
+        },
+        "up": {
+          "texture": "create:block/axis"
+        },
+        "down": {
+          "texture": "create:block/axis"
+        }
+      }
+    },
+    {
+      "from": [
+        13,
+        6,
+        6
+      ],
+      "to": [
+        16,
+        10,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/axis"
+        },
+        "south": {
+          "texture": "create:block/axis"
+        },
+        "east": {
+          "texture": "create:block/axis_top"
+        },
+        "west": {
+          "texture": "create:block/axis_top"
+        },
+        "up": {
+          "texture": "create:block/axis"
+        },
+        "down": {
+          "texture": "create:block/axis"
+        }
+      }
+    },
+    {
+      "from": [
+        3,
+        3.5,
+        1.0
+      ],
+      "to": [
+        5.5,
+        12.5,
+        10.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "south": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "east": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "west": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "up": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "down": {
+          "texture": "create:block/dark_metal_block"
+        }
+      }
+    },
+    {
+      "from": [
+        10.5,
+        3.5,
+        1.0
+      ],
+      "to": [
+        13,
+        12.5,
+        10.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "south": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "east": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "west": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "up": {
+          "texture": "create:block/dark_metal_block"
+        },
+        "down": {
+          "texture": "create:block/dark_metal_block"
+        }
+      }
+    },
+    {
+      "from": [
+        5.5,
+        6,
+        1
+      ],
+      "to": [
+        10.5,
+        10,
+        5
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "south": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "east": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "west": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "up": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "down": {
+          "texture": "create:block/industrial_iron_block"
+        }
+      }
+    }
+  ]
+}

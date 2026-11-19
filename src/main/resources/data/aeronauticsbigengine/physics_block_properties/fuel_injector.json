@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:fuel_injector",
+  "properties": {
+    "sable:mass": 0.5
+  }
+}

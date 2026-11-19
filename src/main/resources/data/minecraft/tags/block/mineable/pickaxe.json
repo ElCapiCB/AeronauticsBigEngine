@@ -1,0 +1,18 @@
+{
+  "values": [
+    "aeronauticsbigengine:crankshaft",
+    "aeronauticsbigengine:crank_throw",
+    "aeronauticsbigengine:engine_flywheel",
+    "aeronauticsbigengine:main_bearing",
+    "aeronauticsbigengine:power_output",
+    "aeronauticsbigengine:connecting_rod",
+    "aeronauticsbigengine:engine_piston",
+    "aeronauticsbigengine:cylinder_wall",
+    "aeronauticsbigengine:cylinder_head",
+    "aeronauticsbigengine:fuel_injector",
+    "aeronauticsbigengine:spark_plug",
+    "aeronauticsbigengine:air_intake",
+    "aeronauticsbigengine:exhaust_manifold",
+    "aeronauticsbigengine:engine_controller"
+  ]
+}

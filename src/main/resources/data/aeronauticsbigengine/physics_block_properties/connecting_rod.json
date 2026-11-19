@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:connecting_rod",
+  "properties": {
+    "sable:mass": 2.0
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:cylinder_head",
+  "properties": {
+    "sable:mass": 5.0
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:crank_throw",
+  "properties": {
+    "sable:mass": 4.0
+  }
+}

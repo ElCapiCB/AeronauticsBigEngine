@@ -1,0 +1,104 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "create:block/brass_casing"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        11,
+        3,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/brass_casing"
+        },
+        "south": {
+          "texture": "create:block/brass_casing"
+        },
+        "east": {
+          "texture": "create:block/brass_casing"
+        },
+        "west": {
+          "texture": "create:block/brass_casing"
+        },
+        "up": {
+          "texture": "create:block/brass_casing"
+        },
+        "down": {
+          "texture": "create:block/brass_casing"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        3,
+        6
+      ],
+      "to": [
+        10,
+        8,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "minecraft:block/white_concrete"
+        },
+        "south": {
+          "texture": "minecraft:block/white_concrete"
+        },
+        "east": {
+          "texture": "minecraft:block/white_concrete"
+        },
+        "west": {
+          "texture": "minecraft:block/white_concrete"
+        },
+        "up": {
+          "texture": "minecraft:block/white_concrete"
+        },
+        "down": {
+          "texture": "minecraft:block/white_concrete"
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        8,
+        7
+      ],
+      "to": [
+        9,
+        10,
+        9
+      ],
+      "faces": {
+        "north": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "south": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "east": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "west": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "up": {
+          "texture": "create:block/industrial_iron_block"
+        },
+        "down": {
+          "texture": "create:block/industrial_iron_block"
+        }
+      }
+    }
+  ]
+}

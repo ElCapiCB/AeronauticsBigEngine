@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:cylinder_wall",
+  "properties": {
+    "sable:mass": 6.0
+  }
+}

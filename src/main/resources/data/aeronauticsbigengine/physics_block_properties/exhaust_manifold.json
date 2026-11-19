@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:exhaust_manifold",
+  "properties": {
+    "sable:mass": 1.0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "aeronauticsbigengine:block/power_output",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "aeronauticsbigengine:block/power_output"
+    },
+    "axis=z": {
+      "model": "aeronauticsbigengine:block/power_output",
+      "x": 90
+    }
+  }
+}

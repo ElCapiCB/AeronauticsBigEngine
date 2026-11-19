@@ -1,0 +1,187 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "north": "true",
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_1"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_2"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film"
+      }
+    },
+    {
+      "when": {
+        "south": "true",
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_1",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": "true",
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_2",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": "true",
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": "true",
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_1",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": "true",
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_2",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": "true",
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": "true",
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_1",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": "true",
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_2",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": "true",
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_1",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_2",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true",
+        "thickness": "1"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_1",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true",
+        "thickness": "2"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film_2",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true",
+        "thickness": "3"
+      },
+      "apply": {
+        "model": "aeronauticsbigengine:block/oil_film",
+        "x": 90,
+        "uvlock": true
+      }
+    }
+  ]
+}

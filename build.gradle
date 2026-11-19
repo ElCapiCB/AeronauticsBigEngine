@@ -1,0 +1,95 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = mod_group_id
+
+base { archivesName = mod_id }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenLocal()
+    maven { url = 'https://maven.createmod.net' }          // Create, Ponder, Flywheel
+    maven { url = 'https://maven.neoforged.net/releases' }
+    exclusiveContent {                                      // Sable + Create Aeronautics
+        forRepository { maven { url = 'https://api.modrinth.com/maven' } }
+        filter { includeGroup 'maven.modrinth' }
+    }
+}
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        "${mod_id}" { sourceSet(sourceSets.main) }
+    }
+}
+
+configurations { sableArtifact }
+
+// Sable ships its companion API (Pose3d, JOMLConversion, BoundingBox3i...) as a nested jar-in-jar.
+// Extract it so we can compile against it; at runtime FML loads it from inside Sable itself.
+def sableNestedDir = layout.buildDirectory.dir('sable-nested')
+var extractSableNested = tasks.register('extractSableNested', Copy) {
+    from({ zipTree(configurations.sableArtifact.singleFile) }) {
+        include 'META-INF/jarjar/sable-companion-*.jar'
+        eachFile { path = name }
+    }
+    includeEmptyDirs = false
+    into sableNestedDir
+}
+
+dependencies {
+    sableArtifact("maven.modrinth:sable:${sable_version}") { transitive = false }
+    compileOnly(files(sableNestedDir.map { it.file("sable-companion-common-${minecraft_version}-${sable_companion_version}.jar") }).builtBy(extractSableNested))
+
+    // Create 6 (the full jar bundles Registrate, Ponder and Flywheel via jar-in-jar for runtime)
+    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}") { transitive = false }
+    compileOnly("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}") { transitive = false }
+    compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}") { transitive = false }
+
+    // Sable (sub-level physics) and Create Aeronautics (bundled: Simulated + Aeronautics + Offroad)
+    implementation("maven.modrinth:sable:${sable_version}")
+    runtimeOnly("maven.modrinth:create-aeronautics:${aeronautics_version}")
+}
+
+var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version, minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version, neo_version_range: neo_version_range,
+            loader_version_range   : loader_version_range, create_version_range: create_version_range,
+            mod_id                 : mod_id, mod_name: mod_name, mod_license: mod_license,
+            mod_version            : mod_version, mod_authors: mod_authors, mod_description: mod_description
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from 'src/main/templates'
+    into 'build/generated/sources/modMetadata'
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

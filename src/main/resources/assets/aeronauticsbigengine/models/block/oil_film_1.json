@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/glow_lichen",
+  "textures": {
+    "glow_lichen": "aeronauticsbigengine:block/oil_film_1",
+    "particle": "aeronauticsbigengine:block/oil_film"
+  },
+  "render_type": "minecraft:translucent"
+}

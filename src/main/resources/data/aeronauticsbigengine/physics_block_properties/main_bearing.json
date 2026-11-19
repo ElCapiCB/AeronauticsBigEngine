@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:main_bearing",
+  "properties": {
+    "sable:mass": 4.0
+  }
+}

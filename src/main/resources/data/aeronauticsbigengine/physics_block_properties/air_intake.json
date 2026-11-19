@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:air_intake",
+  "properties": {
+    "sable:mass": 1.0
+  }
+}

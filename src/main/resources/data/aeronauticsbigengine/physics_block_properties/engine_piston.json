@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:engine_piston",
+  "properties": {
+    "sable:mass": 4.0
+  }
+}

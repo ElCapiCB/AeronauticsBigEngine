@@ -1,0 +1,6 @@
+{
+  "selector": "aeronauticsbigengine:oil_film",
+  "properties": {
+    "sable:mass": 0.02
+  }
+}
