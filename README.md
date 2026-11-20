@@ -70,6 +70,11 @@ sin ensamblar, el motor aplica a la nave un par de reacción y vibración si est
 Con la llave de Create sobre un **Codo de Cigüeñal** se cambia el ángulo del codo (0/90/180/270°) para definir el orden de encendido.
 Las gafas de ingeniero muestran RPM, capacidad, temperatura, aceite y combustible.
 
+## Ponder
+Mantén **W** sobre cualquier bloque del mod (como en Create) para ver escenas animadas: construcción del motor, anatomía del cilindro,
+pistones grandes y masa, puertos de la culata, aceite, la ECU y el ensamblado con Sable, y el orden de encendido de los codos.
+También aparecen en el índice de Ponder bajo la etiqueta **Motores Grandes**.
+
 ## Configuración
 `serverconfig/aeronauticsbigengine-server.toml`: torque por masa, fricción, consumo, desgaste de aceite, temperatura de gripado,
 rigidez/amortiguación de los servos y `invertCrankMotor` / `invertPistonMotor` por si el giro físico sale al revés.
@@ -80,7 +85,8 @@ Requiere **Java 21** para Gradle (Minecraft 1.21.1). Si tu Java por defecto es m
 ```bash
 ./gradlew build
 ```
-El jar queda en `build/libs/`. Los assets se regeneran con `python3 tools/gen_assets.py` y `python3 tools/gen_lang.py`.
+El jar queda en `build/libs/`. Los assets se regeneran con `python3 tools/gen_assets.py`, `python3 tools/gen_ponder.py`,
+`python3 tools/gen_lang.py` y `python3 tools/gen_ponder_lang.py` (en ese orden para los idiomas).
 
 ## Estado
 Versión 0.1.0: compila contra Create 6.0.10, Sable 2.0.6 y Create Aeronautics 1.3.2, pero **todavía no se ha probado en el juego**.

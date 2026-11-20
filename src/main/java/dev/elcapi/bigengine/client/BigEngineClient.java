@@ -3,6 +3,8 @@ package dev.elcapi.bigengine.client;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
 import dev.elcapi.bigengine.BigEngine;
+import dev.elcapi.bigengine.client.ponder.BigEnginePonderPlugin;
+import net.createmod.ponder.foundation.PonderIndex;
 import dev.elcapi.bigengine.registry.ModBlockEntities;
 import dev.engine_room.flywheel.lib.visualization.SimpleBlockEntityVisualizer;
 import net.neoforged.api.distmarker.Dist;
@@ -17,6 +19,7 @@ public final class BigEngineClient {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
+        PonderIndex.addPlugin(new BigEnginePonderPlugin());
         event.enqueueWork(() -> {
             // Rotating shaft on the power output, rendered by Flywheel like any Create shaft.
             SimpleBlockEntityVisualizer.builder(ModBlockEntities.POWER_OUTPUT.get())
