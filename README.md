@@ -75,6 +75,8 @@ Las gafas de ingeniero muestran RPM, capacidad, temperatura, aceite y combustibl
 rigidez/amortiguación de los servos y `invertCrankMotor` / `invertPistonMotor` por si el giro físico sale al revés.
 
 ## Compilar
+Requiere **Java 21** para Gradle (Minecraft 1.21.1). Si tu Java por defecto es más nuevo (25, 27...), no pasa nada:
+`gradle/gradle-daemon-jvm.properties` hace que Gradle use un JDK 21 instalado o descargue Temurin 21 automáticamente.
 ```bash
 ./gradlew build
 ```
