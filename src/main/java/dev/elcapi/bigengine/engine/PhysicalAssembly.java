@@ -14,7 +14,8 @@ import java.util.UUID;
 
 /**
  * Bookkeeping for an engine whose moving parts were turned into Sable sub-levels:
- * one sub-level for the crank group (rotary joint + servo) and one per piston/rod (prismatic joint + servo).
+ * one sub-level for the crank group (rotary joint + servo), and per cylinder one for the piston (prismatic joint)
+ * and one for the connecting rod (pinned to the crank pin and to the piston).
  */
 public final class PhysicalAssembly {
     public static final class Body {
@@ -50,26 +51,42 @@ public final class PhysicalAssembly {
     }
 
     public Body crank;
+    /** Plot positions of the crankshaft pieces placed where main bearings are, so the crank stays one piece. */
+    public final List<BlockPos> bridges = new ArrayList<>();
     public final List<Body> pistons = new ArrayList<>();
+    public final List<Body> rods = new ArrayList<>();
 
-    // runtime only
+    /** Joints of one cylinder (runtime only, rebuilt after a reload). */
+    public static final class CylinderJoints {
+        public GenericConstraintHandle slide;      // piston <-> engine block (prismatic)
+        public RotaryConstraintHandle rodCrank;    // rod big end <-> crank pin
+        public RotaryConstraintHandle rodPiston;   // rod small end <-> piston pin
+        public FreeConstraintHandle rodCarrier;    // no contacts rod <-> engine block
+        public FreeConstraintHandle pistonCrank;   // no contacts piston <-> crank
+    }
+
     public transient RotaryConstraintHandle crankHandle;
-    public final transient List<GenericConstraintHandle> pistonHandles = new ArrayList<>();
-    public final transient List<FreeConstraintHandle> pistonCrankHandles = new ArrayList<>();
+    public final transient List<CylinderJoints> joints = new ArrayList<>();
 
     public CompoundTag save() {
         CompoundTag t = new CompoundTag();
         if (crank != null) t.put("Crank", crank.save());
+        NbtUtil.putPositions(t, "Bridges", bridges);
         ListTag l = new ListTag();
         for (Body b : pistons) l.add(b.save());
         t.put("Pistons", l);
+        ListTag r = new ListTag();
+        for (Body b : rods) r.add(b.save());
+        t.put("Rods", r);
         return t;
     }
 
     public static PhysicalAssembly load(CompoundTag t) {
         PhysicalAssembly a = new PhysicalAssembly();
         if (t.contains("Crank")) a.crank = Body.load(t.getCompound("Crank"));
+        a.bridges.addAll(NbtUtil.getPositions(t, "Bridges"));
         for (Tag e : t.getList("Pistons", Tag.TAG_COMPOUND)) a.pistons.add(Body.load((CompoundTag) e));
+        for (Tag e : t.getList("Rods", Tag.TAG_COMPOUND)) a.rods.add(Body.load((CompoundTag) e));
         return a;
     }
 }

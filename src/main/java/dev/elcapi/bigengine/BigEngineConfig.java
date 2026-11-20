@@ -47,10 +47,11 @@ public final class BigEngineConfig {
         b.comment("Sable sub-level physics (assembled engines)").push("physics");
         CRANK_STIFFNESS = b.comment("Crank servo stiffness, multiplied by the crank sub-level inertia.").defineInRange("crankStiffness", 8000.0, 0.0, 1.0e7);
         CRANK_DAMPING = b.comment("Crank servo damping, multiplied by the crank sub-level inertia.").defineInRange("crankDamping", 180.0, 0.0, 1.0e6);
-        PISTON_STIFFNESS = b.comment("Piston slider stiffness, multiplied by the piston sub-level mass.").defineInRange("pistonStiffness", 8000.0, 0.0, 1.0e7);
-        PISTON_DAMPING = b.comment("Piston slider damping, multiplied by the piston sub-level mass.").defineInRange("pistonDamping", 180.0, 0.0, 1.0e6);
+        PISTON_STIFFNESS = b.comment("Optional servo that helps the pistons follow the crank (they are already carried by the rod joints).",
+                "0 = off. Multiplied by the piston sub-level mass.").defineInRange("pistonAssistStiffness", 0.0, 0.0, 1.0e7);
+        PISTON_DAMPING = b.comment("Damping of the optional piston assist servo, multiplied by the piston sub-level mass.").defineInRange("pistonAssistDamping", 60.0, 0.0, 1.0e6);
         INVERT_CRANK_MOTOR = b.comment("Flip the crank servo direction if the crank turns the wrong way relative to the pistons.").define("invertCrankMotor", false);
-        INVERT_PISTON_MOTOR = b.comment("Flip the piston slider direction if pistons move outside the bore.").define("invertPistonMotor", false);
+        INVERT_PISTON_MOTOR = b.comment("Flip the optional piston assist servo direction.").define("invertPistonMotor", false);
         REACTION_TORQUE_SCALE = b.comment("Reaction torque applied to the ship (sub-level) carrying a non-assembled engine.").defineInRange("reactionTorqueScale", 0.5, 0.0, 1000.0);
         VIBRATION_SCALE = b.comment("Shake applied to the ship for unevenly timed engines (non-assembled).").defineInRange("vibrationScale", 0.2, 0.0, 1000.0);
         b.pop();

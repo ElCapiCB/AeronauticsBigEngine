@@ -4,26 +4,40 @@ package dev.elcapi.bigengine.engine;
 public final class EngineMath {
     /** Crank radius in blocks (stroke = 1 block). */
     public static final double CRANK_RADIUS = 0.5;
-    /** Connecting rod length in blocks (pin to pin). */
-    public static final double ROD_LENGTH = 1.5;
+    /**
+     * Connecting rod length in blocks (pin to pin). The rod block sits on the crank throw and its big end reaches
+     * down to the crank pin at bottom dead centre, so the rod model extends one block below its own block.
+     */
+    public static final double ROD_LENGTH = 2.0;
     public static final double STOICHIOMETRIC_AFR = 14.7;
 
     private EngineMath() {}
 
     /**
      * Angle (degrees, right-hand around +axis) from the crank pin "phase 0" direction to {@code dir}.
-     * Phase 0 points up for horizontal crankshafts and north for vertical ones (matches the block models).
+     * Phase 0 points down for horizontal crankshafts and north for vertical ones (matches the block models), so a
+     * phase-0 throw under an upright cylinder starts at bottom dead centre, exactly as the blocks are placed.
      */
     public static int angleTo(net.minecraft.core.Direction.Axis axis, net.minecraft.core.Direction dir) {
         net.minecraft.core.Direction axisDir = net.minecraft.core.Direction.fromAxisAndDirection(axis, net.minecraft.core.Direction.AxisDirection.POSITIVE);
         int ax = axisDir.getStepX(), ay = axisDir.getStepY(), az = axisDir.getStepZ();
-        int vx = 0, vy = axis == net.minecraft.core.Direction.Axis.Y ? 0 : 1, vz = axis == net.minecraft.core.Direction.Axis.Y ? -1 : 0;
+        int vx = 0, vy = axis == net.minecraft.core.Direction.Axis.Y ? 0 : -1, vz = axis == net.minecraft.core.Direction.Axis.Y ? -1 : 0;
         for (int k = 0; k < 4; k++) {
             if (vx == dir.getStepX() && vy == dir.getStepY() && vz == dir.getStepZ()) return k * 90;
             int nx = ay * vz - az * vy, ny = az * vx - ax * vz, nz = ax * vy - ay * vx; // v = axis x v
             vx = nx; vy = ny; vz = nz;
         }
         return 0;
+    }
+
+    /** Crank pin direction for a pin angle measured from TDC, as a vector: d cos(a) + (axis x d) sin(a). */
+    public static org.joml.Vector3d pinDirection(net.minecraft.core.Direction.Axis axis, net.minecraft.core.Direction dir, double alphaDeg) {
+        net.minecraft.core.Direction ax = net.minecraft.core.Direction.fromAxisAndDirection(axis, net.minecraft.core.Direction.AxisDirection.POSITIVE);
+        org.joml.Vector3d a = new org.joml.Vector3d(ax.getStepX(), ax.getStepY(), ax.getStepZ());
+        org.joml.Vector3d d = new org.joml.Vector3d(dir.getStepX(), dir.getStepY(), dir.getStepZ());
+        org.joml.Vector3d side = a.cross(d, new org.joml.Vector3d());
+        double r = Math.toRadians(alphaDeg);
+        return d.mul(Math.cos(r)).add(side.mul(Math.sin(r)));
     }
 
     /** Crank angle (0-360) at which a throw with the given phase puts its piston at top dead centre. */

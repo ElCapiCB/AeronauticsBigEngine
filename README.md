@@ -29,22 +29,29 @@ Esta versión trae motores en línea (**I**).
 4. Cierra con `Culata` sobre el hueco. En las caras libres de la culata pon: `Inyector de Combustible` (obligatorio),
    `Admisión de Aire` (obligatoria, con aire libre delante), `Bujía` (obligatoria para encender) y `Escape`
    (sin escape el motor rinde ~35%).
-5. **Aceite**: usa la `Lata de Aceite de Motor` sobre las paredes **dentro** del hueco del cilindro. Se pega como una
-   liana (hasta 3 capas). El pistón se desliza sobre ese aceite; se va gastando con el uso.
+5. **Aceite**: usa la `Lata de Aceite de Motor` **sobre la culata**: aceita de una vez todas las paredes del hueco que hay
+   debajo (cada uso añade una capa, máximo 3). También puedes pintarla pared por pared haciendo clic en las caras interiores
+   del hueco antes de poner la culata. Se pega como una liana y el pistón se desliza sobre ella; se va gastando con el uso.
    Sin aceite: mucha fricción, el motor se calienta y termina gripándose.
 6. Llena los inyectores con combustible (tubos de Create o cubo). Por defecto acepta lava (rinde la mitad) y cualquier fluido
    de los tags `c:fuels/*`, `c:diesel`, `c:gasoline`, etc. (tag `aeronauticsbigengine:engine_fuel`).
 7. Pon la `ECU` tocando la línea del cigüeñal, haz clic derecho y pulsa **Arrancar**.
 
 ## Física con Sable
-En la ECU, **Ensamblar (Sable)** convierte:
-- el grupo giratorio (cigüeñal, codos, volantes) en un sub-nivel unido a la bancada con una **articulación rotativa** y un servo;
-- cada pistón + biela en su propio sub-nivel con una **articulación prismática** (solo se desliza a lo largo del cilindro), con servo.
+En la ECU, **Ensamblar (Sable)** convierte el motor en un mecanismo biela-manivela real hecho de sub-niveles:
+- **cigüeñal** (codos, tramos y volantes): un sub-nivel unido al bloque motor con una **articulación rotativa** y un servo
+  que sigue el ángulo de la simulación. Las bancadas siguen fijas en el mundo; dentro del sub-nivel se pone un tramo de cigüeñal
+  en su lugar para que el cigüeñal no se parta en trozos;
+- **biela** (una por cilindro): sub-nivel propio, articulado a la muñequilla del codo y al bulón del pistón;
+- **pistón** (uno por cilindro): sub-nivel propio con una **articulación prismática** (solo se desliza a lo largo del cilindro).
 
-Las colisiones entre las piezas móviles y el bloque del motor están desactivadas para que puedan solaparse.
-Si el motor está sobre una nave (sub-nivel de Aeronautics), las fuerzas de las piezas se transmiten a la nave;
-sin ensamblar, el motor aplica a la nave un par de reacción y vibración si está mal sincronizado.
-**Desensamblar** devuelve todos los bloques a su sitio.
+Solo el cigüeñal tiene motor: bielas y pistones se mueven arrastrados por las articulaciones. Carrera = 1 bloque
+(radio de manivela 0,5), biela de 2 bloques entre centros (por eso su modelo cuelga un bloque por debajo hasta la muñequilla).
+Las colisiones entre piezas móviles y el bloque motor están desactivadas. Si el motor va sobre una nave de Aeronautics, las
+fuerzas de las piezas se transmiten a la nave; sin ensamblar, la ECU aplica a la nave un par de reacción y vibración si está
+mal sincronizado. **Desensamblar** devuelve todos los bloques a su sitio.
+
+Con un codo en fase 0 la muñequilla apunta hacia abajo (punto muerto inferior), igual que el pistón recién colocado.
 
 ## Masa → torque → stress units
 - Cada cilindro aporta `torquePerKpg × masa del pistón y la biela (masa de Sable)` de capacidad por RPM.

@@ -80,8 +80,8 @@ VEC = {"x": (1, 0, 0), "y": (0, 1, 0), "z": (0, 0, 1)}
 def cross(a, b):
     return (a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0])
 def pin_dir(axis, phase):
-    # phase 0 pin points up (north for a vertical crank), each phase step = +90 deg around +axis (right hand)
-    v = (0, 0, -1) if axis == "y" else (0, 1, 0)
+    # phase 0 pin points down (north for a vertical crank), each phase step = +90 deg around +axis (right hand)
+    v = (0, 0, -1) if axis == "y" else (0, -1, 0)
     for _ in range(phase):
         v = cross(VEC[axis], v)
     return v
@@ -104,17 +104,15 @@ throw_variants = {}
 for axis in "xyz":
     for phase in range(4):
         p = pin_dir(axis, phase)
-        off = tuple(c * 5 for c in p)          # pin 5 px off centre
-        web_off = tuple(c * 2.5 for c in p)
+        off = tuple(c * 8 for c in p)          # crank radius = half a block (stroke = 1 block)
+        web_off = tuple(c * 4 for c in p)
         els = []
         f, t = axis_box(axis, 6, 10, 0, 3); els.append(box(f, t, AXIS, AXIS_TOP, axis))
         f, t = axis_box(axis, 6, 10, 13, 16); els.append(box(f, t, AXIS, AXIS_TOP, axis))
         for a_lo, a_hi in ((3, 5.5), (10.5, 13)):
-            f, t = axis_box(axis, 3.5, 12.5, a_lo, a_hi, offset=web_off)
-            f, t = clamp_box(f, t)
+            f, t = axis_box(axis, 3, 13, a_lo, a_hi, offset=web_off)
             els.append(box(f, t, DARK, DARK, axis))
-        f, t = axis_box(axis, 6, 10, 5.5, 10.5, offset=off)
-        f, t = clamp_box(f, t)
+        f, t = axis_box(axis, 6, 10, 5.5, 10.5, offset=off)   # crank pin, may poke 2px outside the block
         els.append(box(f, t, IRON, IRON, axis))
         name = f"crank_throw_{axis}_{phase}"
         model(name, els, {"particle": DARK})
@@ -137,10 +135,11 @@ model("power_output", [box([0, 0, 0], [16, 16, 16], BRASS, GEARBOX)], {"particle
 axis_state("power_output"); item_from_block("power_output"); blocks.append("power_output")
 
 # ---------------------------------------------------------------- reciprocating parts (built pointing UP)
+# The rod is 2 blocks long pin to pin: its big end hangs one block below the rod block, around the crank pin.
 model("connecting_rod", [
-    box([5, 0, 5], [11, 3, 11], DARK),          # big end
-    box([6.5, 3, 6.5], [9.5, 13, 9.5], IRON),   # beam
-    box([5.5, 13, 5.5], [10.5, 16, 10.5], DARK) # small end
+    box([5, -16, 5], [11, -11, 11], DARK),       # big end (around the crank pin at BDC)
+    box([6.5, -11, 6.5], [9.5, 13, 9.5], IRON),  # beam
+    box([5.5, 13, 5.5], [10.5, 16, 10.5], DARK)  # small end (piston pin)
 ], {"particle": IRON})
 facing_state("connecting_rod"); item_from_block("connecting_rod"); blocks.append("connecting_rod")
 

@@ -193,6 +193,9 @@ public class EngineControllerBlockEntity extends BlockEntity implements IHaveGog
                     if (structureError != null) player.displayClientMessage(structureError.copy().withStyle(ChatFormatting.RED), true);
                     return;
                 }
+                // The sub-levels are posed for crank angle 0, so the simulation restarts its cycle there.
+                angle = 0;
+                tickStartAngle = tickEndAngle = 0;
                 PhysicalAssembly a = new PhysicalAssembly();
                 Component err;
                 try {

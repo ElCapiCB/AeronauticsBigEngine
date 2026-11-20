@@ -40,6 +40,7 @@ ES = {
     "El aceite se pega a las paredes como una liana. Usa la lata otra vez para apilar hasta 3 capas",
     "El pistón se desliza sobre esta película. Cada explosión la gasta un poco, así que repónla de vez en cuando",
     "Sin aceite la fricción se multiplica hasta por cuatro: el motor pierde potencia, se recalienta y acaba gripado",
+    "Atajo: usa la lata sobre una Culata para aceitar de una vez todas las paredes del cilindro que hay debajo",
     "Las Gafas de Ingeniero sobre la ECU muestran qué tan bien lubricado está el motor"]),
 "engine_controller": ("La Unidad de Control del Motor", [
     "La Unidad de Control (ECU) maneja el motor. Haz clic derecho para abrir su pantalla",

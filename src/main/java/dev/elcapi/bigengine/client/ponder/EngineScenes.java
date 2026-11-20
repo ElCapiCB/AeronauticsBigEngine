@@ -298,6 +298,16 @@ public final class EngineScenes {
         scene.overlay().showText(90).attachKeyFrame().colored(PonderPalette.RED).independent(20)
                 .text("Without oil, friction rises up to four times: the engine loses power, overheats and finally seizes");
         scene.idle(100);
+        scene.world().showSection(util.select().position(CYL_B, 5, Z), Direction.DOWN);
+        scene.idle(10);
+        scene.overlay().showText(80).attachKeyFrame().pointAt(util.vector().topOf(CYL_B, 5, Z)).placeNearTarget()
+                .text("Shortcut: use the can on a Cylinder Head to oil every wall of the bore below it at once");
+        scene.overlay().showControls(util.vector().topOf(CYL_B, 5, Z), Pointing.DOWN, 40).rightClick().withItem(new ItemStack(ModItems.ENGINE_OIL.get()));
+        scene.idle(20);
+        BlockState full = ModBlocks.OIL_FILM.get().defaultBlockState().setValue(OilFilmBlock.THICKNESS, 1);
+        for (Direction d : Direction.Plane.HORIZONTAL) full = full.setValue(MultifaceBlock.getFaceProperty(d), true);
+        scene.world().setBlock(new BlockPos(CYL_B, 4, Z), full, false);
+        scene.idle(70);
         scene.overlay().showText(70).independent(20)
                 .text("Engineer's Goggles on the controller show how well the engine is lubricated");
         scene.idle(80);

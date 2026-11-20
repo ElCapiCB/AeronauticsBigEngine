@@ -68,9 +68,9 @@ s = Structure(7, 7, 7)
 s.set(0, 1, 3, "create:shaft", axis="x")
 s.set(1, 1, 3, "power_output", axis="x")
 s.set(2, 1, 3, "main_bearing", axis="x")
-s.set(3, 1, 3, "crank_throw", axis="x", phase=0)
+s.set(3, 1, 3, "crank_throw", axis="x", phase=2)   # pin up: piston A at TDC
 s.set(4, 1, 3, "main_bearing", axis="x")
-s.set(5, 1, 3, "crank_throw", axis="x", phase=2)
+s.set(5, 1, 3, "crank_throw", axis="x", phase=0)   # pin down: piston B at BDC
 s.set(6, 1, 3, "engine_flywheel", axis="x")
 s.set(2, 1, 4, "engine_controller", facing="south")
 for x in (3, 5):
