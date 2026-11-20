@@ -26,6 +26,18 @@ def box(frm, to, tex_side, tex_end=None, axis="y"):
     return {"from": frm, "to": to, "faces": faces}
 
 def model(name, elements, textures, parent="block/block", extra=None):
+    # Faces must reference texture *variables* ("#t0"), never raw paths: map every path to a variable.
+    textures = dict(textures)
+    var_of = {}
+    for el in elements:
+        for face in el["faces"].values():
+            tex = face["texture"]
+            if tex.startswith("#"):
+                continue
+            if tex not in var_of:
+                var_of[tex] = f"t{len(var_of)}"
+                textures[var_of[tex]] = tex
+            face["texture"] = "#" + var_of[tex]
     m = {"parent": parent, "textures": textures, "elements": elements}
     if extra: m.update(extra)
     w(f"{A}/models/block/{name}.json", m)

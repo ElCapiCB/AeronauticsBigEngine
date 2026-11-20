@@ -1,7 +1,9 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "create:block/copper_casing"
+    "particle": "create:block/copper_casing",
+    "t0": "create:block/copper_casing",
+    "t1": "minecraft:block/black_concrete"
   },
   "elements": [
     {
@@ -17,22 +19,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "south": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "east": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "west": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "up": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "down": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         }
       }
     },
@@ -49,22 +51,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "south": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "east": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "west": {
-          "texture": "create:block/copper_casing"
+          "texture": "#t0"
         },
         "up": {
-          "texture": "minecraft:block/black_concrete"
+          "texture": "#t1"
         },
         "down": {
-          "texture": "minecraft:block/black_concrete"
+          "texture": "#t1"
         }
       }
     }

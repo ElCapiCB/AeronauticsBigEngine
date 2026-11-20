@@ -1,7 +1,9 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "create:block/brass_casing"
+    "particle": "create:block/brass_casing",
+    "t0": "create:block/brass_casing",
+    "t1": "create:block/gearbox"
   },
   "elements": [
     {
@@ -17,22 +19,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "south": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "east": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "west": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "up": {
-          "texture": "create:block/gearbox"
+          "texture": "#t1"
         },
         "down": {
-          "texture": "create:block/gearbox"
+          "texture": "#t1"
         }
       }
     }

@@ -1,7 +1,10 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "create:block/brass_casing"
+    "particle": "create:block/brass_casing",
+    "t0": "create:block/brass_casing",
+    "t1": "minecraft:block/white_concrete",
+    "t2": "create:block/industrial_iron_block"
   },
   "elements": [
     {
@@ -17,22 +20,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "south": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "east": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "west": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "up": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         },
         "down": {
-          "texture": "create:block/brass_casing"
+          "texture": "#t0"
         }
       }
     },
@@ -49,22 +52,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "minecraft:block/white_concrete"
+          "texture": "#t1"
         },
         "south": {
-          "texture": "minecraft:block/white_concrete"
+          "texture": "#t1"
         },
         "east": {
-          "texture": "minecraft:block/white_concrete"
+          "texture": "#t1"
         },
         "west": {
-          "texture": "minecraft:block/white_concrete"
+          "texture": "#t1"
         },
         "up": {
-          "texture": "minecraft:block/white_concrete"
+          "texture": "#t1"
         },
         "down": {
-          "texture": "minecraft:block/white_concrete"
+          "texture": "#t1"
         }
       }
     },
@@ -81,22 +84,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t2"
         },
         "south": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t2"
         },
         "east": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t2"
         },
         "west": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t2"
         },
         "up": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t2"
         },
         "down": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t2"
         }
       }
     }

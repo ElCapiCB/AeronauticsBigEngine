@@ -1,7 +1,11 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "create:block/dark_metal_block"
+    "particle": "create:block/dark_metal_block",
+    "t0": "create:block/axis",
+    "t1": "create:block/axis_top",
+    "t2": "create:block/dark_metal_block",
+    "t3": "create:block/industrial_iron_block"
   },
   "elements": [
     {
@@ -17,22 +21,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "south": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "east": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "west": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "up": {
-          "texture": "create:block/axis_top"
+          "texture": "#t1"
         },
         "down": {
-          "texture": "create:block/axis_top"
+          "texture": "#t1"
         }
       }
     },
@@ -49,22 +53,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "south": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "east": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "west": {
-          "texture": "create:block/axis"
+          "texture": "#t0"
         },
         "up": {
-          "texture": "create:block/axis_top"
+          "texture": "#t1"
         },
         "down": {
-          "texture": "create:block/axis_top"
+          "texture": "#t1"
         }
       }
     },
@@ -81,22 +85,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "south": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "east": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "west": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "up": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "down": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         }
       }
     },
@@ -113,22 +117,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "south": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "east": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "west": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "up": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         },
         "down": {
-          "texture": "create:block/dark_metal_block"
+          "texture": "#t2"
         }
       }
     },
@@ -145,22 +149,22 @@
       ],
       "faces": {
         "north": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t3"
         },
         "south": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t3"
         },
         "east": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t3"
         },
         "west": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t3"
         },
         "up": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t3"
         },
         "down": {
-          "texture": "create:block/industrial_iron_block"
+          "texture": "#t3"
         }
       }
     }
